@@ -1,35 +1,43 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo.svg";
+import { signOut } from "firebase/auth";
+import auth from "../Firebase/Firebase";
 const Navbar = () => {
+  const handleLogOut = () => {
+    // logout functionality
+    signOut(auth)
+      .then(() => {})
+      .catch(() => {});
+  };
+
   const navLinks = (
     <>
-      <NavLink>
-        <li>
-          <a>Home</a>
-        </li>
+      <NavLink className="mx-4">
+        <li>Home</li>
       </NavLink>
-      <NavLink>
-        <li>
-          <a>About</a>
-        </li>
+      <NavLink className="mx-4">
+        <li>About</li>
       </NavLink>
-      <NavLink>
-        <li>
-          <a>Services</a>
-        </li>
+      <NavLink className="mx-4">
+        <li>Services</li>
       </NavLink>
-      <NavLink>
-        <li>
-          <a>Blog</a>
-        </li>
+      <NavLink className="mx-4">
+        <li>Blog</li>
       </NavLink>
-      <NavLink>
+      <NavLink className="mx-4">
+        <li>Contacts</li>
+      </NavLink>
+      <NavLink className="mx-4" to="/login">
+        <li>Login</li>
+      </NavLink>
+      <NavLink className="" to="/login">
         <li>
-          <a>Contacts</a>
+          <button onClick={handleLogOut}>LogOut</button>
         </li>
       </NavLink>
     </>
   );
+
   return (
     <div className="navbar bg-base-100 h-28 mb-5">
       <div className="navbar-start">
