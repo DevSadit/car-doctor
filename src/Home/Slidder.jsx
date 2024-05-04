@@ -7,7 +7,7 @@ import img6 from "../assets/images/banner/6.jpg"
 
 const Slidder = () => {
   return (
-    <div className="carousel w-full">
+    <div className="carousel w-full lg:h-[700px] mt-5">
       <div id="slide1" className="carousel-item relative w-full">
         <img src={img1} className="w-full" />
         <div className="absolute space-y-4 left-24 top-40 text-white w-2/5">
